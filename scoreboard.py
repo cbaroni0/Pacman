@@ -11,7 +11,6 @@ class Scoreboard:
         """Initialize scorekeeping attributes"""
         self.screen = screen
         self.screen_rect = screen.get_rect()
-        #self.ai_settings = ai_settings
         self.stats = stats
         self.lives = Group()
 
@@ -37,7 +36,6 @@ class Scoreboard:
         self.score_rect.top = 5
 
     def prep_level(self):
-        #rounded_level = int(round(self.stats.level, -1))
         rounded_level = self.stats.level
         level_str = "{:,}".format(rounded_level)
         level_str = "Lvl: " + level_str
@@ -72,15 +70,6 @@ class Scoreboard:
         file.write(str(self.stats.second_place) + "\n")
         file.write(str(self.stats.third_place) + "\n")
         file.close()
-
-    #def prep_level(self):
-    #    """Turn the level into a rendered image"""
-    #    self.level_image = self.font.render(str(self.stats.level), True, self.text_color, self.ai_settings.bg_color)
-
-        # Position the level below the score
-    #    self.level_rect = self.level_image.get_rect()
-    #    self.level_rect.right = self.score_rect.right
-    #    self.level_rect.top = self.score_rect.bottom + 10
 
     def prep_lives(self):
         """Show how many lives are left"""

@@ -1,7 +1,6 @@
 import pygame
 from pygame.sprite import Sprite
 from pygame import mixer
-from player import Player
 import math
 
 
@@ -20,7 +19,6 @@ class Ghost(Sprite):
         self.type = type
         self.destinationx = 0
         self.destinationy = 0
-        #self.ai_settings = ai_settings
         mixer.init()
 
         # Load the ship image and get its rect

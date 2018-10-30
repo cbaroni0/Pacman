@@ -13,11 +13,9 @@ class EventLoop:
     def __str__(self):
         return 'eventloop, finished=' + str(self.finished) + ')'
 
-    #@staticmethod
     def check_events(self, screen, player, maze, stats, button):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                #sys.exit()
                 self.finished = True
             elif event.type == pygame.KEYDOWN:
                 self.check_keydown_events(event, screen, player, maze)
@@ -67,7 +65,6 @@ class EventLoop:
     def check_wall_collision(self, player, maze):
         collision = False
         for brick in maze.bricks:
-            #if pygame.sprite.collide_rect(player, brick):
             if player.rect.colliderect(brick):
                 collision = True
 
@@ -88,11 +85,9 @@ class EventLoop:
     def check_pill_collision(self, player, maze, stats):
         counter = 0
         for pill in maze.powerpills:
-            # if pygame.sprite.collide_rect(player, brick):
             if player.rect.colliderect(pill):
                 del maze.powerpills[counter]
                 stats.score += 10
-                #checks if all powerpills gone
                 if not maze.powerpills:
                     stats.level += 1
                     player.reset_player()

@@ -2,9 +2,9 @@ import pygame
 
 
 class ImageRect:
-    def __init__(self, screen, imagename, height, width):
+    def __init__(self, screen, image_name, height, width):
         self.screen = screen
-        name = 'images/' + imagename + '.png'
+        name = 'images/' + image_name + '.png'
 
         img = pygame.image.load(name)
         img = pygame.transform.scale(img, (height, width))

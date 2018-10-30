@@ -11,8 +11,7 @@ class Player(Sprite):
         self.screen = screen
         self.speed_factor = 1
         self.y_mod = 200
-        self.invincible = False;
-        #self.ai_settings = ai_settings
+        self.invincible = False
         mixer.init()
 
         # Load the ship image and get its rect

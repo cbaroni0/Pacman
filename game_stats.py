@@ -3,7 +3,6 @@ class GameStats:
 
     def __init__(self):
         """Initialize statistics"""
-        #self.ai_settings = ai_settings
         self.reset_stats()
 
         # Start game is an inactive state

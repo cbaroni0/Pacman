@@ -53,7 +53,6 @@ class Maze:
         rhportal = self.hportal.rect
         rvportal = self.vportal.rect
         rpowerpill = self.powerpill.rect
-        rkillpill = self.killpill.rect
         w, h = r.width, r.height
         dx, dy = self.deltax, self.deltay
 
@@ -70,7 +69,8 @@ class Maze:
                 elif col == 'v':
                     self.vportals.append(pygame.Rect(ncol * dx, nrow * dy, rvportal.width, rvportal.height))
                 elif col == 'f':
-                    self.powerpills.append(pygame.Rect(ncol * dx + rpowerpill.width/2, nrow * dy + rpowerpill.height/2, rpowerpill.width, rpowerpill.height))
+                    self.powerpills.append(pygame.Rect(ncol * dx + rpowerpill.width/2, nrow * dy + rpowerpill.height/2,
+                                                       rpowerpill.width, rpowerpill.height))
                 elif col == 'g':
                     self.ghosts.append(Ghost(self.screen, ghost_counter))
                     ghost_counter += 1

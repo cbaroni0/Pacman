@@ -52,9 +52,7 @@ class Game:
                 eloop.check_pill_collision(self.player, self.maze, self.stats)
                 eloop.check_killpill_collision(self.player, self.maze, self.stats)
                 self.player.update()
-                #self.player.blitme()
             self.update_screen()
-        #check high score at end of game
         self.check_high_score()
         self.score_board = Scoreboard(self.screen, self.stats)
         self.score_board.prep_high_score()
